@@ -1,31 +1,29 @@
-const level = {
-    Iron: 1000,
-    Bronze: 1001,
-    Silver: 2001,
-    Gold: 6001,
-    Platinum: 7001,
-    Ascendant: 8001,
-    Immortal: 9001,
-    Radiant: 10001
+const rankingLevel = {
+    Iron: 10,
+    Bronze: 11,
+    Silver: 21,
+    Gold: 51,
+    Diamante: 81,
+    Lendário: 91 ,
+    Immortal: 101,
 }
 
 function displayHeroTable(numberOfHeroes) {
-
-    
     const heroes = createHeroes(numberOfHeroes);
-    setLevelsForHeroes(heroes);
-
+    setRanksForHeroes(heroes);
+    
     const tableData = heroes.map(hero => ({
         HeroName: hero.name,
-        HeroXp: hero.xp,
-        HeroLevel: hero.level
+        VictoryPoints: hero.victoryPoints,
+        WinningMargin: hero.victoryPoints - hero.defeatPoints ,
+        HeroLevel: hero.rankingLevel
     }));    
     
     console.table(tableData);
 
     // Solução requisitada no desafio
     // for (let i = 0; i < heroes.length; i++) {
-    //     console.log(`O Herói de nome: ${heroes[i].name}, está no nível de: ${heroes[i].level} e está com ${heroes[i].xp} de XP`);
+    //     console.log(`O Herói de nome: ${heroes[i].name}, está no rank: ${heroes[i].rankingLevel} e está com ${heroes[i].victoryPoints} vitórias`);
     // }
 } 
 
@@ -35,30 +33,31 @@ function createHeroes(numberOfHeroes) {
     for (let i = 0; i < numberOfHeroes; i++) {
         heroes.push({
             name: `hero${i}`,
-            xp: 1000 * i + 1,
-            level: null
+            victoryPoints: 10 *i,
+            defeatPoints: Math.floor(Math.random() * 10 * i),
+            rankingLevel: 'Iron'
         });    
     }    
     
     return heroes;
 }    
-function setLevelsForHeroes(heroes) {
+
+function setRanksForHeroes(heroes) {
     for (let i = 0; i < heroes.length; i++) {
-        setHeroLevel(heroes[i]);
+        setHeroRank(heroes[i]);
     }
 }
 
-function setHeroLevel(hero) {
-
-    const levelKeys = Object.keys(level);
+function setHeroRank(hero) {
+    const levelKeys = Object.keys(rankingLevel);
     
     for (let j = 0; j < levelKeys.length; j++) {
         const currentLevelKey = levelKeys[j];
         const nextLevelKey = levelKeys[j + 1];
-        const nextLevelXP = level[nextLevelKey];
+        const nextLevelXP = rankingLevel[nextLevelKey];
 
-        if (!nextLevelKey || hero.xp < nextLevelXP) {
-            hero.level = currentLevelKey;
+        if (!nextLevelKey || hero.victoryPoints < nextLevelXP) {
+            hero.rankingLevel = currentLevelKey;
             break;
         }    
     }    
@@ -66,4 +65,4 @@ function setHeroLevel(hero) {
 
 
 
-displayHeroTable(10);
+displayHeroTable(12);
