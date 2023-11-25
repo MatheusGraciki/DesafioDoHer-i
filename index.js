@@ -10,6 +10,8 @@ const level = {
 }
 
 function displayHeroTable(numberOfHeroes) {
+
+    
     const heroes = createHeroes(numberOfHeroes);
     setLevelsForHeroes(heroes);
 
@@ -20,7 +22,12 @@ function displayHeroTable(numberOfHeroes) {
     }));    
     
     console.table(tableData);
-}    
+
+    // Solução requisitada no desafio
+    // for (let i = 0; i < heroes.length; i++) {
+    //     console.log(`O Herói de nome: ${heroes[i].name}, está no nível de: ${heroes[i].level} e está com ${heroes[i].xp} de XP`);
+    // }
+} 
 
 function createHeroes(numberOfHeroes) {
     const heroes = [];
