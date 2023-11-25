@@ -1,4 +1,5 @@
 # Desafio Classificador de Nível de Herói
+## Variação do desafio na outra branch
 
 ## Meu Objetivo
 Sei que apesar de saber linguagens de programação é fundamental ser excelente na lógica, por isso estou fazendo este curso de "Lógica de Programação" na DIO.
