@@ -2,8 +2,8 @@
 
 ## Meu Objetivo
 Sei que apesar de saber linguagens de programação é fundamental ser excelente na lógica, por isso estou fazendo este curso de "Lógica de Programação" na DIO.
-Tenho como objetivo aprimorar minhas bases e fazer com que fique muito mais facil o desenvolvimento em outras linguagens, pois a única coisa que irá mudar será a sintaxe e com uma 
-boa lógica acredito conseguir ir mais longe do que com uma linguagem específica, principalmente porque ainda não consegui um emprego, então não faria sentido focar em uma linguagem só.
+Tenho como objetivo aprimorar minhas bases e fazer com que fique muito mais facil o desenvolvimento em outras linguagens, pois a única coisa que irá mudar será a sintaxe, com uma 
+boa lógica acredito conseguir ir mais longe do que com uma linguagem específica, principalmente porque ainda não consegui um emprego, então na minha visão não faria sentido focar em uma linguagem só.
 
 ## Como Rodar o Projeto
 - Você precisa ter o node instalado, se você tem o nodejs instalado é só dar um node index.js no terminal
